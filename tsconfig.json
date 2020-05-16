@@ -18,13 +18,15 @@
     "removeComments": true,
     "pretty": true,
     "strictPropertyInitialization": true,
-    "lib": ["es5"],
+    "lib": [
+      "es5"
+    ],
     "typeRoots": [
       "./typings"
     ]
   },
   "include": [
-    "./**/*.ts"
+    "./**/*.ts",
   ],
   "exclude": [
     "node_modules"
