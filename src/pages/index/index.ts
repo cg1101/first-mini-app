@@ -53,7 +53,16 @@ Page({
       hasUserInfo: true,
     })
   },
-  toggleTabBar() {
-    console.log('toggleTabBar()');
+  toggleTabBar(e: any) {  // cannot include DOM in lib of tsconfig due to conflicts
+    console.log('toggleTabBar(e)', e);
+    const showTabBar = !this.data.showTabBar;
+    this.setData({showTabBar});
+    if (showTabBar) {
+      // console.log('show tab bar');
+      wx.showTabBar({});
+    } else {
+      // console.log('hide tab bar');
+      wx.hideTabBar({});
+    }
   },
 })
