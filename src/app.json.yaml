@@ -50,8 +50,8 @@ tabBar:
       text: "首页"
       # iconPath: "images/home.png"
       # selectedIconPath: "images/home-active.png"
-    - pagePath: "pages/category/index"
-      text: "分类"
+    - pagePath: "pages/logs/logs"
+      text: "日志"
       # iconPath: "images/cate.png"
       # selectedIconPath: "images/cate-active.png"
   # string  否  bottom  tabBar 的位置，仅支持 bottom / top
