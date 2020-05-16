@@ -8,9 +8,11 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    showTabBar: true,
   },
   // 事件处理函数
   bindViewTap() {
+    console.log('go to logs page');
     wx.navigateTo({
       url: '../logs/logs',
     })
@@ -50,5 +52,8 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true,
     })
+  },
+  toggleTabBar() {
+    console.log('toggleTabBar()');
   },
 })

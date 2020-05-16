@@ -5,6 +5,8 @@
     <block wx:else>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <text>是否显示tab栏</text>
+      <switch checked="{{showTabBar}}" type="{{'checkbox'}}" bindchange="toggleTabBar"></switch>
     </block>
   </view>
   <view class="usermotto">
