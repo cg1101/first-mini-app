@@ -50,25 +50,25 @@
 
 + [小程序框架](https://developers.weixin.qq.com/miniprogram/dev/framework/MINA.html)
 
-  + [场景值](https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/scene.html)
-  + [逻辑层](https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/scene.html)
-    - [注册小程序](https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/app.html)
-    - [注册页面](https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/page.html)
-    - [页面生命周期](https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/page-life-cycle.html)
-    - [页面路由](https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/route.html)
-    - [模块化](https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/module.html)
-    - [API](https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/api.html)
-  + [视图层](https://developers.weixin.qq.com/miniprogram/dev/framework/view/)
-    - [WXML](https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/)
-    - [WXSS](https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxss.html)
-    - [WXS](https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxs/)
-    - [事件系统](https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/event.html)
-      * [WXS 响应事件](https://developers.weixin.qq.com/miniprogram/dev/framework/view/interactive-animation.html)
-    - [简易双向绑定](https://developers.weixin.qq.com/miniprogram/dev/framework/view/two-way-bindings.html)
-    - [基础组件](https://developers.weixin.qq.com/miniprogram/dev/framework/view/component.html)
-    - [获取界面上的节点信息](https://developers.weixin.qq.com/miniprogram/dev/framework/view/selector.html)
-    - [响应显示区域变化](https://developers.weixin.qq.com/miniprogram/dev/framework/view/resizable.html)
-    - [动画](https://developers.weixin.qq.com/miniprogram/dev/framework/view/animation.html)
+  - [场景值](https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/scene.html)
+  - [逻辑层](https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/scene.html)
+    * [注册小程序](https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/app.html)
+    * [注册页面](https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/page.html)
+    * [页面生命周期](https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/page-life-cycle.html)
+    * [页面路由](https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/route.html)
+    * [模块化](https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/module.html)
+    * [API](https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/api.html)
+  - [视图层](https://developers.weixin.qq.com/miniprogram/dev/framework/view/)
+    * [WXML](https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/)
+    * [WXSS](https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxss.html)
+    * [WXS](https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxs/)
+    * [事件系统](https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/event.html)
+      + [WXS 响应事件](https://developers.weixin.qq.com/miniprogram/dev/framework/view/interactive-animation.html)
+    * [简易双向绑定](https://developers.weixin.qq.com/miniprogram/dev/framework/view/two-way-bindings.html)
+    * [基础组件](https://developers.weixin.qq.com/miniprogram/dev/framework/view/component.html)
+    * [获取界面上的节点信息](https://developers.weixin.qq.com/miniprogram/dev/framework/view/selector.html)
+    * [响应显示区域变化](https://developers.weixin.qq.com/miniprogram/dev/framework/view/resizable.html)
+    * [动画](https://developers.weixin.qq.com/miniprogram/dev/framework/view/animation.html)
 
 + [小程序运行时](https://developers.weixin.qq.com/miniprogram/dev/framework/runtime/env.html)
 
@@ -323,6 +323,89 @@
     - [基础类库](https://developers.weixin.qq.com/miniprogram/dev/reference/wxs/07basiclibrary.html)
 
 ## [组件](https://developers.weixin.qq.com/miniprogram/dev/component/)
+
++ [视图容器](https://developers.weixin.qq.com/miniprogram/dev/component/cover-image.html)
+
+  - [cover-image](https://developers.weixin.qq.com/miniprogram/dev/component/cover-image.html)
+  - [cover-view](https://developers.weixin.qq.com/miniprogram/dev/component/cover-view.html)
+  - [movable-area](https://developers.weixin.qq.com/miniprogram/dev/component/movable-area.html)
+  - [movable-view](https://developers.weixin.qq.com/miniprogram/dev/component/movable-view.html)
+  - [scroll-view](https://developers.weixin.qq.com/miniprogram/dev/component/scroll-view.html)
+  - [swiper](https://developers.weixin.qq.com/miniprogram/dev/component/swiper.html)
+  - [swiper-item](https://developers.weixin.qq.com/miniprogram/dev/component/swiper-item.html)
+  - [view](https://developers.weixin.qq.com/miniprogram/dev/component/view.html)
+
++ [基础内容](https://developers.weixin.qq.com/miniprogram/dev/component/icon.html)
+
+  - [icon](https://developers.weixin.qq.com/miniprogram/dev/component/icon.html)
+  - [progress](https://developers.weixin.qq.com/miniprogram/dev/component/progress.html)
+  - [rich-text](https://developers.weixin.qq.com/miniprogram/dev/component/rich-text.html)
+  - [text](https://developers.weixin.qq.com/miniprogram/dev/component/text.html)
+
++ [表单组件](https://developers.weixin.qq.com/miniprogram/dev/component/button.html)
+
+  - [button](https://developers.weixin.qq.com/miniprogram/dev/component/button.html)
+  - [checkbox](https://developers.weixin.qq.com/miniprogram/dev/component/checkbox.html)
+  - [checkbox-group](https://developers.weixin.qq.com/miniprogram/dev/component/checkbox-group.html)
+  - [editor](https://developers.weixin.qq.com/miniprogram/dev/component/editor.html)
+  - [form](https://developers.weixin.qq.com/miniprogram/dev/component/form.html)
+  - [input](https://developers.weixin.qq.com/miniprogram/dev/component/input.html)
+  - [label](https://developers.weixin.qq.com/miniprogram/dev/component/label.html)
+  - [picker](https://developers.weixin.qq.com/miniprogram/dev/component/picker.html)
+  - [picker-view](https://developers.weixin.qq.com/miniprogram/dev/component/picker-view.html)
+  - [picker-view-column](https://developers.weixin.qq.com/miniprogram/dev/component/picker-view-column.html)
+  - [radio](https://developers.weixin.qq.com/miniprogram/dev/component/radio.html)
+  - [radio-group](https://developers.weixin.qq.com/miniprogram/dev/component/radio-group.html)
+  - [slider](https://developers.weixin.qq.com/miniprogram/dev/component/slider.html)
+  - [switch](https://developers.weixin.qq.com/miniprogram/dev/component/switch.html)
+  - [textarea](https://developers.weixin.qq.com/miniprogram/dev/component/textarea.html)
+
++ [导航](https://developers.weixin.qq.com/miniprogram/dev/component/functional-page-navigator.html)
+
+  - [functional-page-navigator](https://developers.weixin.qq.com/miniprogram/dev/component/functional-page-navigator.html)
+  - [navigator](https://developers.weixin.qq.com/miniprogram/dev/component/navigator.html)
+
++ [媒体组件](https://developers.weixin.qq.com/miniprogram/dev/component/audio.html)
+
+  - [audio](https://developers.weixin.qq.com/miniprogram/dev/component/audio.html)
+  - [camera](https://developers.weixin.qq.com/miniprogram/dev/component/camera.html)
+  - [image](https://developers.weixin.qq.com/miniprogram/dev/component/image.html)
+  - [live-player](https://developers.weixin.qq.com/miniprogram/dev/component/live-player.html)
+  - [live-pusher](https://developers.weixin.qq.com/miniprogram/dev/component/live-pusher.html)
+  - [video](https://developers.weixin.qq.com/miniprogram/dev/component/video.html)
+
++ [地图](https://developers.weixin.qq.com/miniprogram/dev/component/map.html)
+
+  - [map](https://developers.weixin.qq.com/miniprogram/dev/component/map.html)
+
++ [画布](https://developers.weixin.qq.com/miniprogram/dev/component/canvas.html)
+
+  - [canvas](https://developers.weixin.qq.com/miniprogram/dev/component/canvas.html)
+
++ [开放能力](https://developers.weixin.qq.com/miniprogram/dev/component/ad.html)
+
+  - [ad](https://developers.weixin.qq.com/miniprogram/dev/component/ad.html)
+  - [official-account](https://developers.weixin.qq.com/miniprogram/dev/component/official-account.html)
+  - [open-data](https://developers.weixin.qq.com/miniprogram/dev/component/open-data.html)
+  - [web-view](https://developers.weixin.qq.com/miniprogram/dev/component/web-view.html)
+
++ [原生组件说明](https://developers.weixin.qq.com/miniprogram/dev/component/native-component.html)
+
+  - [native-component](https://developers.weixin.qq.com/miniprogram/dev/component/native-component.html)
+
++ [无障碍访问](https://developers.weixin.qq.com/miniprogram/dev/component/aria-component.html)
+
+  - [aria-component](https://developers.weixin.qq.com/miniprogram/dev/component/aria-component.html)
+
++ [导航栏](https://developers.weixin.qq.com/miniprogram/dev/component/aria-component.html)
+
+  - [navigation-bar](https://developers.weixin.qq.com/miniprogram/dev/component/navigation-bar.html)
+
++ [页面属性配置节点](https://developers.weixin.qq.com/miniprogram/dev/component/page-meta.html)
+
+  - [page-meta](https://developers.weixin.qq.com/miniprogram/dev/component/page-meta.html)
+
+
 ## [API](https://developers.weixin.qq.com/miniprogram/dev/api/)
 ## [服务端](https://developers.weixin.qq.com/miniprogram/dev/api-backend/)
 ## [工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/devtools)
