@@ -1594,3 +1594,16 @@
   - [API](https://developers.weixin.qq.com/miniprogram/dev/extended/service-market/api.html)
 
 ## [更新日志](https://developers.weixin.qq.com/miniprogram/dev/framework/release/)
+
++ [小程序基础库](https://developers.weixin.qq.com/miniprogram/dev/framework/release/)
+
+  - [v2.x版本](https://developers.weixin.qq.com/miniprogram/dev/framework/release/v2.html)
+  - [v1.x版本](https://developers.weixin.qq.com/miniprogram/dev/framework/release/v1.html)
+  - [v0.x版本](https://developers.weixin.qq.com/miniprogram/dev/framework/release/v0.html)
+
++ [开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/uplog.html)
++ [小程序·云开发](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference/changelog-cloud-sdk.html)
+
+  - [基础库](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference/changelog-cloud-sdk.html)
+  - [wx-server-sdk](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference/changelog-server-sdk.html)
+  - [IDE & 控制台](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference/changelog-ide.html)
