@@ -1,6 +1,6 @@
 // index.ts
 // 获取应用实例
-const app = getApp<IAppOption>()
+const app = getApp<IAppOption>();
 
 Page({
   data: {
@@ -17,7 +17,8 @@ Page({
       url: '../logs/logs',
     })
   },
-  onLoad() {
+  onLoad(options: any) {
+    console.log('onLoad()', options);
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -44,6 +45,9 @@ Page({
         },
       })
     }
+  },
+  onShow() {
+    console.log('index.onShow()');
   },
   getUserInfo(e: any) {
     console.log(e)
