@@ -1,0 +1,23 @@
+@import '../../app.wxss';
+
+.container {
+  margin: 5px 5px 5px 5px;
+  border: thin solid blue;
+}
+
+.vbox {
+  display: flex;
+  background-color: lightyellow;
+  flex-direction: column;
+  justify-content: space-around;
+  border: thin green solid;
+  padding: 25rpx;
+}
+.vbox .item {
+  display: inline-block;
+  width: 75px;
+  height: 75px;
+  border: thin black dashed;
+  margin: 25rpx;
+  text-align: center;
+}

@@ -1,6 +1,13 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/features/features",
+    "pages/audio/audio",
+    "pages/form/form",
+    "pages/map/map",
+    "pages/camera/camera",
+    "pages/canvas/canvas",
+    "pages/video/video",
     "pages/logs/logs",
     "pages/settings/settings"
   ],
@@ -18,6 +25,10 @@
       {
         "pagePath": "pages/index/index",
         "text": "首页"
+      },
+      {
+        "pagePath": "pages/features/features",
+        "text": "功能展示"
       },
       {
         "pagePath": "pages/settings/settings",

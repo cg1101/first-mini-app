@@ -1,6 +1,5 @@
 // logs.ts
-// const util = require('../../utils/util.js')
-import { formatTime } from '../../utils/util'
+import { formatTime } from '../../utils/index';
 
 Page({
   data: {

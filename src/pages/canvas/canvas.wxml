@@ -1,0 +1,3 @@
+<!-- canvas.wxml -->
+<text class="h1">{{title}}</text>
+<canvas type="2d" id="myCanvas"></canvas>

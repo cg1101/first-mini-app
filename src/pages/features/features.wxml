@@ -1,0 +1,12 @@
+<view class="container" scroll-y="true">
+  <view class="h1">View</view>
+  <view class="vbox">
+    <view class="item" bindtap="showFeature"
+          wx:for="{{features}}" wx:for-item="feature" wx:for-index="i"
+          wx:key="name" data-feature="{{feature.name}}">{{i}} - {{feature.label}}
+    </view>
+  </view>
+</view>
+<scroll-view>
+  <text class="h1">scroll-view</text>
+</scroll-view>
