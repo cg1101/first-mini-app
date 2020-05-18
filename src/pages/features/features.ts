@@ -9,7 +9,8 @@ Page({
       { name: 'canvas', label: 'Canvas' },
       { name: 'video', label: 'Video' },
       { name: 'audio', label: 'Audio' },
-    ]
+      { name: 'scanner', label: 'Scanner' },
+    ],
   },
   showFeature(e: any) {
     console.log('event->', e);

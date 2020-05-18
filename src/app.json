@@ -8,6 +8,7 @@
     "pages/camera/camera",
     "pages/canvas/canvas",
     "pages/video/video",
+    "pages/scanner/scanner",
     "pages/logs/logs",
     "pages/settings/settings"
   ],
