@@ -3,8 +3,15 @@
 
   <form id="form0" bindsubmit="submitForm" bindreset="resetForm"
         data-description="form of registration">
-    <text>Name:</text><input placeholder="name" value="{{form0.name}}"/>
-    <text>Registered:</text><checkbox checked="{{form0.registered}}" />
+    <text selectable="false" space="ensp">User Name:</text>
+    <input placeholder="name" value="{{form0.name}}"/>
+    <text selectable="false" space="emsp">Registered Status</text>
+    <checkbox checked="{{form0.registered}}"/>
+    <checkbox-group bindchange="statesUpdated">
+      <checkbox wx:for="{{states}}" wx:key="value"
+        value="{{item.value}}" disabled="{{item.disabled}}"
+        checked="{{item.checked}}"><text>{{item.label}}</text></checkbox>
+    </checkbox-group>
     <button type="primary" form-type="submit">Submit Form 0</button>
     <button type="warn" form-type="reset">Reset Form 0</button>
   </form>
@@ -43,12 +50,22 @@
     <!-- open type -->
     <view style="margin-top:15px;">
       <text>Open Type</text>
-      <button open-type="contact" session-from="">Contact</button>
+      <button open-type="contact"
+              session-from=""
+              send-message-title=""
+              send-message-path=""
+              send-message-img=""
+              show-message-card=""
+              bindcontact="handleContact">Contact</button>
       <button open-type="share">Share</button>
-      <button open-type="getPhoneNumber">getPhoneNumber</button>
+      <button open-type="getPhoneNumber"
+              bindgetphonenumber="">getPhoneNumber</button>
       <button open-type="getUserInfo">getUserInfo</button>
-      <button open-type="launchApp">launchApp</button>
-      <button open-type="openSetting">openSetting</button>
+      <button open-type="launchApp"
+              app-parameter=""
+              binderrror="">launchApp</button>
+      <button open-type="openSetting"
+              bindopensetting="">openSetting</button>
       <button open-type="feedback">feedback</button>
     </view>
     <!-- lang -->
