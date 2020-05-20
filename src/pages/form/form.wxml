@@ -1,1 +1,73 @@
-<text class="h1">form</text>
+<view class="main-container" hover-class="hovered" hover-start-time="50"
+      hover-stay-time="400" hover-stop-propagation="true">
+
+  <form id="form0" bindsubmit="submitForm" bindreset="resetForm"
+        data-description="form of registration">
+    <text>Name:</text><input placeholder="name" value="{{form0.name}}"/>
+    <text>Registered:</text><checkbox checked="{{form0.registered}}" />
+    <button type="primary" form-type="submit">Submit Form 0</button>
+    <button type="warn" form-type="reset">Reset Form 0</button>
+  </form>
+  <!-- using <form report-submit="true" > will get a warning message -->
+  <form id="form1"
+        data-desription="form of buttons"
+        report-submit-timeout="0"
+        bindsubmit="submitForm"
+        bindreset="resetForm">
+    <!-- buttons -->
+    <!-- form-type -->
+    <view style="margin-top:15px;">
+      <text>Form Type</text>
+      <button size="mini" type="warn" loading="true" form-type="reset"
+              hover-class="hovered"
+      send-message-img=""
+      send-message-path=""
+      send-message-title=""
+      app-parameter=""
+      show-message-card="">Reset</button>
+      <button form-type="submit" type="primary">Submit</button>
+    </view>
+    <!-- size -->
+    <view style="margin-top:15px;">
+      <text>Button Size</text>
+      <button size="mini" hover-class="hovered">Mini Button</button>
+      <button size="default" hover-class="hovered">Default Size</button>
+    </view>
+    <!-- button type -->
+    <view style="margin-top:15px;">
+      <text>Button Type</text>
+      <button type="primary">Primary</button>
+      <button type="warn">Warn</button>
+      <button type="default">Default</button>
+    </view>
+    <!-- open type -->
+    <view style="margin-top:15px;">
+      <text>Open Type</text>
+      <button open-type="contact" session-from="">Contact</button>
+      <button open-type="share">Share</button>
+      <button open-type="getPhoneNumber">getPhoneNumber</button>
+      <button open-type="getUserInfo">getUserInfo</button>
+      <button open-type="launchApp">launchApp</button>
+      <button open-type="openSetting">openSetting</button>
+      <button open-type="feedback">feedback</button>
+    </view>
+    <!-- lang -->
+    <view style="margin-top:15px;">
+      <text>Lang</text>
+      <button lang="en">English</button>
+      <button lang="zh_CN">简体中文</button>
+      <button lang="zh_TW">繁体中文</button>
+    </view>
+    <!-- plain -->
+    <view style="margin-top:15px;">
+      <text selectable="true" space="nbsp" decode="true"
+            style="background-color:pink;color:white;">
+        &lt;Plain&gt;
+        <text selectable="true" space="nbsp" decode="false"
+              style="color:blue;">&lt;embedded text&gt;</text>
+      </text>
+      <button plain="true">Transparent</button>
+      <button plain="false">Non-transparent</button>
+    </view>
+  </form>
+</view>
