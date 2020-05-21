@@ -1,7 +1,7 @@
 <view class="main-container" hover-class="hovered" hover-start-time="50"
       hover-stay-time="400" hover-stop-propagation="true">
 
-  <form id="form0" bindsubmit="submitForm" bindreset="resetForm"
+  <form id="form0" class="demo" bindsubmit="submitForm" bindreset="resetForm"
         data-description="form of registration">
     <text selectable="false" space="ensp">User Name:</text>
     <input placeholder="name" value="{{form0.name}}"/>
@@ -15,9 +15,11 @@
     <button type="primary" form-type="submit">Submit Form 0</button>
     <button type="warn" form-type="reset">Reset Form 0</button>
   </form>
+
   <!-- using <form report-submit="true" > will get a warning message -->
-  <form id="form1"
+  <form id="form1" class="demo"
         data-desription="form of buttons"
+        report-submit="false"
         report-submit-timeout="0"
         bindsubmit="submitForm"
         bindreset="resetForm">
@@ -86,5 +88,45 @@
       <button plain="true">Transparent</button>
       <button plain="false">Non-transparent</button>
     </view>
+  </form>
+
+  <view id="icons" class="demo">
+    <text>Icon Control</text>
+    <slider min="0" max="{{iconDemo.types.length-1}}" step="1"
+        disabled="{{sliderDemo.disabled}}" value="{{iconDemo.typeIndex}}"
+        color="{{sliderDemo.activeColor}}" selected-color="{{sliderDemo.backgroundColor}}"
+        backgroundColor="{{sliderDemo.backgroundColor}}" activeColor="{{sliderDemo.activeColor}}"
+        block-size="{{sliderDemo.blockSize}}" block-color="{{sliderDemo.blockColor}}"
+        show-value="{{sliderDemo.showValue}}"
+        bindchanging=""
+        bindchange="changeIconType"></slider>
+    <text>Icon - {{iconDemo.types[iconDemo.typeIndex]}}</text>
+    <view>
+      <icon id="demo-icon" color=""
+            type="{{iconDemo.types[iconDemo.typeIndex]}}" size="{{iconDemo.size}}"></icon>
+    </view>
+  </view>
+
+  <form id="progress" class="demo" bindsubmit="toggleTimer" bindreset="resetProgress">
+    <button type="{{timer.running ? 'warn' : 'primary'}}" form-type="submit">{{timer.label}}</button>
+    <button form-type="reset">Reset Progress</button>
+    <progress percent="100" show-info active stroke-width="3" bindactiveend="activeEnd"></progress>
+    <progress percent="{{progressDemo.percent}}"
+      show-info="{{progressDemo.showInfo}}" border-radius="{{progressDemo.radius}}"
+      font-size="{{progressDemo.fontSize}}" stroke-width="{{progressDemo.strokeWidth}}"
+      color="{{progressDemo.activeColor}}"
+      activeColor="{{progressDemo.activeColor}}" backgroundColor="{{progressDemo.backgroundColor}}"
+      active="{{progressDemo.active}}"
+      active-mode="{{progressDemo.isBackwards ? 'backwards' : 'forwards'}}"
+      duration="{{progressDemo.duration}}"
+      bindactiveend="activeEnd"></progress>
+    <progress percent="{{progressDemo.percent}}"
+      show-info="{{progressDemo.showInfo}}" border-radius="{{progressDemo.radius * 2}}"
+      font-size="{{progressDemo.fontSize * 2}}" stroke-width="{{progressDemo.strokeWidth * 2}}"
+      activeColor="{{progressDemo.activeColor}}" backgroundColor="{{progressDemo.backgroundColor}}"
+      active="{{progressDemo.active}}"
+      active-mode="{{progressDemo.isBackwards ? 'forwards' : 'backwards'}}"
+      duration="{{progressDemo.duration}}"
+      bindactiveend="activeEnd"></progress>
   </form>
 </view>

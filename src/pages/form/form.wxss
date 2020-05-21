@@ -9,11 +9,11 @@ page {
 .main-container.hovered {
   background-color: lightgreen;
 }
-
-#form0 {
+.demo {
   margin-top: 25px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 25px;
   padding: 25rpx;
   width: 80%;
   min-height: 200px;
@@ -23,4 +23,7 @@ page {
   -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
   -moz-box-shadow:    3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
   box-shadow:         3px 3px 5px 6px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+#form0, #form1, #icons {
+  display: block;
 }
