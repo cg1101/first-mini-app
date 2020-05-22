@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/checkout/checkout",
     "pages/features/features",
     "pages/audio/audio",
     "pages/form/form",

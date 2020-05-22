@@ -69,4 +69,10 @@ Page({
       wx.hideTabBar({});
     }
   },
+  checkout(e: any) {
+    console.log('should checkout->', e);
+    wx.navigateTo({
+      url: '/pages/checkout/checkout?order_type=buyNow&goods_id=10002&goods_num=1&goods_sku_id=0',
+    });
+  },
 })

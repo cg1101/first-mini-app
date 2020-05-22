@@ -7,6 +7,12 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
       <text>是否显示tab栏</text>
       <switch checked="{{showTabBar}}" type="{{'checkbox'}}" bindchange="toggleTabBar"></switch>
+
+      <text id="goToCheckout" decode="true" bindtap="checkout"
+          selectable="true"
+          style="color:blue;text-decoration:underline;font-size:8pt;width:80%;margin-left:auto;margin-right:auto;overflow-wrap:break-word;">
+        /pages/checkout/checkout?order_type=buyNow&amp;goods_id=10002&amp;goods_num=1&amp;goods_sku_id=0
+      </text>
     </block>
   </view>
   <view class="usermotto">
