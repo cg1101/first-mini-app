@@ -1,0 +1,483 @@
+# reference:
+# https://json-schema.org/understanding-json-schema/
+# https://json-schema.org/understanding-json-schema/reference/schema.html
+#
+#
+# https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html
+#
+$schema: https://json-schema.org/draft/2019-09/schema
+$id: https://mywebsite/weixin/project.config.schema.json
+
+definitions:
+  plugIn:
+    $id: '#plugIn'
+    type: object
+    properties:
+      version:
+        title: 插件版本号
+        examples:
+          - '1.0.0'
+        type: string
+      provider:
+        title: 插件源
+        description: >-
+          e.g. "wxidxxxxxxxxxxxxxxxx"
+        type: string
+      export:
+        title: 供插件使用的小程序导出内容
+        description: >-
+          从基础库 2.11.1 起，使用插件的小程序可以导出一些内容，供插件获取。具体来说，在声明使用插件时，可以通过 export 字段来指定一个文件
+        examples:
+          - index.js
+        type: string
+    required:
+      - version
+      - provider
+  ruleObj:
+    $id: '#ruleObj'
+    type: object
+    properties:
+      packages:
+        title: 进入页面后预下载分包的 root 或 name
+        description: 进入页面后预下载分包的 root 或 name。__APP__ 表示主包。
+        type: array
+        items: string
+      network:
+        title: 在指定网络下预下载
+        description: >-
+          在指定网络下预下载，可选值为：all: 不限网络 wifi: 仅wifi下预下载
+        default: wifi
+        type: string
+    required:
+      - packages
+  permissionObj:
+    $id: '#permissionObj'
+    type: object
+    properties:
+      desc:
+        title: 小程序获取权限时展示的接口用途说明。最长 30 个字符
+        type: string
+        maxLength: 30
+
+
+type: object
+properties:
+  pages:
+    title: 页面路径列表
+    description: >-
+      List of pages in mini program. All pages that are in use must be
+      included. If mini program tries to navigate to a page that is not
+      included in pages list, it will throw an error. Order of pages is
+      important, the first one will be loaded as home page.
+    comment: |+
+      + uniqueItems is implied by using object value for items
+      + no default for this one
+    examples:
+      - - /pages/index/index
+        - /pages/settings/settings
+    type: array
+    items:
+      type: string
+    minItems: 1
+
+  window:
+    title: 全局的默认窗口表现
+    description: >-
+      Default look-n-feel settings that applies to all windows
+    type: object
+    properties:
+      navigationBarBackgroundColor:
+        title: 导航栏背景颜色
+        description: >-
+          color can be in hex format or html defined color names
+        examples:
+          - '#000000'
+        default: '#000000'
+        type: string
+      navigationBarTextStyle:
+        title: 导航栏标题颜色
+        description: 仅支持 black / white
+        default: white
+        enum:
+          - black
+          - white
+        type: string
+      navigationBarTitleText:
+        title: 导航栏标题文字内容
+        comment: no default value for this field
+        type: string
+      navigationStyle:
+        title: 导航栏样式
+        description: >-
+          仅支持以下值：
+          default 默认样式
+          custom 自定义导航栏，只保留右上角胶囊按钮。参见注 2。微信客户端 6.6.0
+        default: default
+        enum:
+          - default
+          - custom
+       	type: string
+      backgroundColor:
+        title: 窗口的背景色
+        description: >-
+          color can be in hex format or html defined color names
+        default: '#ffffff'
+        type: string
+        default: '#ffffff'
+      backgroundTextStyle:
+        title: 下拉 loading 的样式
+        description: >-
+          仅支持 dark / light
+        default: dark
+        enum:
+          - dark
+          - light
+        type: string
+
+  tabBar:
+    title: 底部 tab 栏的表现
+    type: object
+    properties:
+      color:
+        title: tab 上的文字默认颜色
+        description: 仅支持十六进制颜色
+        type: string
+      selectedColor:
+        title: tab 上的文字选中时的颜色
+        description: 仅支持十六进制颜色
+        type: string
+      backgroundColor:
+        title: tab 的背景色
+        description: 仅支持十六进制颜色
+        type: string
+      borderStyle:
+        title: tabbar 上边框的颜色
+        description: 仅支持 black / white
+        default: black
+        enum:
+          - black
+          - white
+        type: string
+      list:
+        title: tab 的列表
+        description: 详见 list 属性说明，最少 2 个、最多 5 个 tab
+        type: array
+        items:
+          type: object
+          properties:
+            pagePath:
+              title: 页面路径
+              description: 页面路径必须在 pages 中先定义
+              examples:
+                - pages/settings/settings
+              type: string
+            text:
+              title: tab 上按钮文字
+              description: tab 上按钮文字
+              examples:
+                - Settings
+              type: string
+            iconPath:
+              title: 图片路径
+              description: >-
+                图片路径，icon 大小限制为 40kb，建议尺寸为 81px * 81px，不支持网络图片。
+                当 position 为 top 时，不显示 icon。
+              comment: >-
+                If provided, iconPath must not be empty. The minimal length is decided by adding
+                white listed extensions
+              examples:
+                - ./images/settings.png
+                - ./images/settings.jpg
+                - ./images/settings.jpeg
+                - ./images/settings.gif
+                - ./images/settings.svg
+              type: string
+              minLength: 5
+              pattern: '^.*\\.(png|jpg|jpeg|gif|svg)$'
+            selectedIconPath:
+              title: 选中时的图片路径
+              description: >-
+                选中时的图片路径，icon 大小限制为 40kb，建议尺寸为 81px * 81px，不支持网络图片。
+                当 position 为 top 时，不显示 icon。
+              comment: >-
+                minLength includes length of extension
+              examples:
+                - ./images/settings.png
+                - ./images/settings.jpg
+                - ./images/settings.jpeg
+                - ./images/settings.gif
+                - ./images/settings.svg
+              type: string
+              minLength: 5
+              pattern: '^.*\\.(png|jpg|jpeg|gif|svg)$'
+          required:
+            - pagePath
+            - text
+        minItems: 2
+        maxItems: 5
+      position:
+        title: tabBar 的位置
+        description: 仅支持 bottom / top
+        default: bottom
+        enum:
+          - bottom
+          - top
+        type: string
+      custom:
+        title: 自定义 tabBar
+        description: >-
+          See https://developers.weixin.qq.com/miniprogram/dev/framework/ability/custom-tabbar.html,
+          Wechat ver: 2.5.0
+        default: false
+        type:	boolean
+    required:
+      - title
+      - selectedColor
+      - backgroundColor
+      - list
+
+  networkTimeout:
+    title: 网络超时时间
+    description: >-
+      This controls timeout settings of various network related activities.
+    type: object
+    properties:
+      request:
+        title: wx.request 的超时时间
+        description: wx.request 的超时时间，单位：毫秒。
+        type: number
+        default: 60000
+      connectSocket:
+        title: wx.connectSocket 的超时时间
+        description: wx.connectSocket 的超时时间，单位：毫秒。
+        type: number
+        default: 60000
+      uploadFile:
+        title: wx.uploadFile 的超时时间
+        description: wx.uploadFile 的超时时间，单位：毫秒。
+        type: number
+        default: 60000
+      downloadFile:
+        title: wx.downloadFile 的超时时间
+        description: wx.downloadFile 的超时时间，单位：毫秒。
+        type: number
+        default: 60000
+    additionalProperties: false
+
+  debug:
+    title: 是否开启 debug 模式
+    description: 默认关闭
+    default: false
+    type: boolean
+
+  functionalPages:
+    title: 是否启用插件功能页
+    description: >-
+      默认关闭 wechat ver: 2.1.0
+    default: false
+    type: boolean
+
+  subpackages:
+    title: 分包结构配置
+    description: >-
+      wechat ver: 1.7.3, 微信客户端 6.6.0 ，基础库 1.7.3 及以上版本支持
+      see: https://developers.weixin.qq.com/miniprogram/dev/framework/subpackages/basic.html
+      声明 subpackages 后，将按 subpackages 配置路径进行打包
+      subpackages 配置路径外的目录将被打包到 app（主包） 中
+      app（主包）也可以有自己的 pages（即最外层的 pages 字段）
+      subpackage 的根目录不能是另外一个 subpackage 内的子目录
+      tabBar 页面必须在 app（主包）内
+    comment: no default value for this one
+    examples:
+      - - root: packageA
+          pages:
+          - pages/cat
+          - pages/dog
+        - root: package
+          name: pack2
+          pages:
+          - pages/apple
+          - pages/banana
+    type: array
+    items:
+      type: object
+      properties:
+        root:
+          title: 分包根目录
+          type: string
+        name:
+          title: 分包别名，分包预下载时可以使用
+          type: string
+        pages:
+          title: 分包页面路径，相对与分包根目录
+          type: array
+          items: string
+        independent:
+          title: 分包是否是独立分包
+          type: boolean
+        plugins:
+          title: 只在当前分包内用到的插件
+          description: >-
+            see: https://developers.weixin.qq.com/miniprogram/dev/framework/plugin/using.html
+          type: object
+          additionalProperties:
+            $ref: '#plugIn'
+      additionalProperties: false
+      required:
+        - root
+        - pages
+
+  workers:
+    title: Worker 代码放置的目录
+    description: >-
+      wechat ver: 1.9.90
+    examples:
+      - ./workers
+    type: string
+
+  requiredBackgroundModes:
+    title: 需要在后台使用的能力，如「音乐播放」
+    default: []
+    comment: unifiedItems is implied
+    type: array
+    items:
+      type: string
+
+  plugins:
+    title: 使用到的插件
+    description: >-
+      wechat ver: 1.9.6
+      see: https://developers.weixin.qq.com/miniprogram/dev/framework/plugin/using.html
+    comment: plugin names will be used as keys
+    examples:
+      - myPlugin:
+          version: '1.0.0'
+          provider: wxidxxxxxxxxxxxxxxxx
+    type: object
+    additionalProperties:
+      $ref: '#plugIn'
+
+  preloadRule:
+    title: 分包预下载规则
+    description: >-
+      wechat ver: 2.3.0
+    examples:
+      - pages/index:
+          network: all
+          packages:
+            - important
+        sub1/index:
+          packages:
+            - hello
+            - sub3
+        sub3/index:
+          packages":
+            - path/to
+        indep/index:
+          packages:
+            - __APP__
+    comment: rule names are used as keys
+    type: object
+    additionalProperties:
+      $ref: '#ruleObj'
+
+  resizable:
+    title: 是否支持用户任意改变窗口大小
+    description: >-
+      PC 小程序是否支持用户任意改变窗口大小（包括最大化窗口）；iPad 小程序是否支持屏幕旋转。默认关闭 wechat: ver: 2.3.0
+    default: false
+    type: boolean
+
+  usingComponents:
+    title: 全局自定义组件配置
+    description: >-
+      开发者工具 1.02.1810190
+      see: https://developers.weixin.qq.com/miniprogram/dev/framework/subpackages/preload.html
+    comment: component names are used as keys
+    type: object
+    additionalProperties:
+      title: component file path
+      comment: file path must not be empty
+      type: string
+      minLength: 1
+
+  permission:
+    title: 小程序接口权限相关设置
+    description: >-
+      微信客户端 7.0.0
+    type: object
+    properties:
+      'scope.userLocation':
+        $ref: '#permissionObj'
+
+  sitemapLocation:
+    title: 指明 sitemap.json 的位置
+    description: >-
+      filepath of mini program's sitemap.json
+    comment: no default value for this one
+    examples:
+      - ./sitemap.json
+    type: string
+
+  style:
+    title: 指定使用升级后的weui样式
+    description: >-
+      wechat ver: 2.8.0
+    type: string
+
+  useExtendedLib:
+    title: 指定需要引用的扩展库
+    description: >-
+      wechat ver: 2.2.1
+    type: object
+    properties:
+      kbone:
+        title: 多端开发框架
+        type: boolean
+      weui: WeUI 组件库
+        type: boolean
+
+  entranceDeclare:
+    title: 微信消息用小程序打开
+    description: >-
+      微信客户端7.0.9
+    type: object
+    properties:
+      locationMessage:
+        type: object
+        properties:
+          path:
+            title: 启动页路径，必须是在pages中已经定义
+            description: >-
+              wechat ver: 7.0.9
+            examples:
+              - /pages/index/index
+            type: string
+          query:
+            title: 启动页参数
+            description: >-
+              wechat ver: 7.0.9
+            examples:
+              - foot=bar
+            type: string
+
+  darkmode:
+    title: 小程序支持 DarkMode
+    description: >-
+      wechat ver: 2.11.0
+    default: false
+    type: boolean
+
+  themeLocation:
+    title: 指明 theme.json 的位置
+    description: >-
+      filepath of mini program's theme definition json.
+      darkmode为true为必填 	开发者工具 1.03.2004271
+    comment: darkmode为true为必填
+    examples:
+      - ./theme.json
+    type: string
+
+required:
+  - pages
+  - sitemapLocation
