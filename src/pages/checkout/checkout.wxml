@@ -9,3 +9,9 @@
 
   <view>blah</view>
 </view>
+
+<view>
+<text>component</text>
+<payment title="{{paymentTitle}}"></payment>
+<payment></payment>
+</view>

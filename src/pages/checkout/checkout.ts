@@ -3,6 +3,7 @@ import { api } from '../../utils/index';
 
 Page({
   data: {
+    // paymentTitle: 'test!!!',
   },
   onLoad(options: any) {
     console.log('checkout.onLoad()', options);

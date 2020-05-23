@@ -1,0 +1,6 @@
+<view>
+<text>{{title}}</text>
+<text>微信支付</text>
+<text>余额支付</text>
+<text>信用卡支付</text>
+</view>
