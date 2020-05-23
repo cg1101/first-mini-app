@@ -1,1 +1,16 @@
 /* pages/checkout/checkout.wxss */
+page {
+  background-color: darkgray;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: space-around;
+
+}
+page > view {
+  border-radius: 5px;
+  min-height: 40px;
+  background-color: lightyellow;
+  margin: 5px;
+}

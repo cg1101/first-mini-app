@@ -1,2 +1,11 @@
 <view>
+  <text>order status</text>
+</view>
+
+<text>address</text>
+
+<view style="background-color: blue">
+  <text>order</text>
+
+  <view>blah</view>
 </view>
