@@ -10,6 +10,17 @@ Component({
   methods: {
     validateCreditCardInfo() {
       console.log('validate credit card info');
+    },
+    bindTap1(e: any) {
+      console.log(`component payment tapped`, e);
+      this.triggerEvent('payTypeSelected', {payType: 'wechat'}, {});
+    },
+    bindTap2(e: any) {
+      console.log(`component payment tapped`, e);
+      this.triggerEvent('payTypeSelected', {payType: 'balance'}, {});
+    },
+    bindTap3(e: any) {
+      console.log(`component payment tapped`, e);
     }
   },
 });

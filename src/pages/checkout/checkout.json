@@ -1,5 +1,5 @@
 {
   "usingComponents": {
-    "payment": "../../components/payment/payment"
+    "my-comp-payment": "../../components/payment/payment"
   }
 }

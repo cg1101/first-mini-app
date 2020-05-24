@@ -1,6 +1,6 @@
-<view>
-<text>{{title}}</text>
-<text>微信支付</text>
-<text>余额支付</text>
-<text>信用卡支付</text>
+<view class="comp-container">
+  <text>{{title}}</text>
+  <text class="pay-type" bindtap="bindTap1">微信支付</text>
+  <text class="pay-type" bindtap="bindTap2">余额支付</text>
+  <text class="pay-type" bindtap="bindTap3">信用卡支付</text>
 </view>

@@ -1,0 +1,30 @@
+/* payment.wxss */
+/* https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/ */
+/* 注意：在组件wxss中不应使用ID选择器、属性选择器和标签名选择器。 */
+.comp-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-items: flex-start;
+  /* align-items: flex-start; */
+  align-items: stretch;
+  align-content: flex-start;
+
+  border: solid blue thin;
+  padding: 5px;
+
+  /* font-size: 16px; */
+  font-size: 12px;
+}
+.comp-container > .pay-type {
+  display: block;
+  flex: 0 0 auto;
+  margin: 2px;
+  border: dashed lightgray thin;
+  /*
+  order: 0;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+  align-self: flex-start;
+  */
+}

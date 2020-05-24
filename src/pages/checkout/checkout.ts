@@ -13,4 +13,10 @@ Page({
         console.log('received result', resp);
       });
   },
+  reportPayType(e: any) {
+    console.log('checkout page, payType updated', e);
+  },
+  report2(e: any) {
+    console.log('checkout page, payType updated report 2', e);
+  },
 })
