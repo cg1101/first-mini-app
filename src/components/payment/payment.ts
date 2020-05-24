@@ -1,3 +1,5 @@
+import { PayType } from '../../models/index';
+
 Component({
   properties: {
     title: {
@@ -6,24 +8,31 @@ Component({
     },
   },
   data: {
+    payType: PayType.WECHAT,
     cardNumber: '',
     expiryMonth: '',
     expiryYear: '',
     cvv: '',
+    $valid: true,
   },
   methods: {
     validateCreditCardInfo() {
       console.log('validate credit card info');
     },
-    bindTap1(e: any) {
+    usePayTypeWeChat(e: any) {
       console.log(`component payment tapped`, e);
-      this.triggerEvent('payTypeSelected', {payType: 'wechat'}, {});
+      const details = { payType: PayType.WECHAT, $valid: true}
+      this.setData(details);
+      this.triggerEvent('payTypeSelected', details, {});
     },
-    bindTap2(e: any) {
+    usePayTypeBalance(e: any) {
       console.log(`component payment tapped`, e);
-      this.triggerEvent('payTypeSelected', {payType: 'balance'}, {});
+      const details = { payType: PayType.BALANCE, $valid: true}
+      this.setData(details);
+      this.triggerEvent('payTypeSelected', details, {});
     },
-    bindTap3(e: any) {
+    usePayTypeCreditCard(e: any) {
+      this.setData({ payType: PayType.CREDIT_CARD, $valid: true});
       console.log(`component payment tapped`, e);
     },
     updateCardNo(e: any) {
