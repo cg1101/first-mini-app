@@ -8,13 +8,14 @@
     <view class="card-info">
       <view class="hbox">
         <text class="label">信用卡号</text>
-        <input class="cc_no" bindinput="updateCardNumber"/>
+        <input class="cc_no flexi" bindinput="updateCardNumber"/>
       </view>
       <view class="hbox">
         <text class="label">有效期至</text>
         <input class="cc_month" bindinput="updateExpiryMonth"/>
         <text class="label">/</text>
         <input class="cc_year" bindinput="updateExpiryYear"/>
+        <text class="flexi"></text>
         <text class="label">CVV</text>
         <input class="cc_cvv" bindinput="updateCvv"/>
       </view>
