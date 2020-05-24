@@ -206,6 +206,9 @@ export interface ComponentObserverDefinition {
  * @see https://developers.weixin.qq.com/miniprogram/dev/reference/api/Component.html
  */
 export interface WeChatMiniProgramComponent {
+  /**
+   * 
+   */
   properties: object;
   data: Record<string, any>;
   observers: ComponentObserverDefinition;
@@ -224,36 +227,11 @@ export interface WeChatMiniProgramComponent {
   definitionFilter: () => void;
 }
 
-export class BasePage implements WeChatMiniProgramPage {
-  data = {};
-  onLoad(query: IQuery) {}
-  onShow() {}
-  onReady() {}
-  onHide() {}
-  onUnload() {}
-  onPullDownRefresh() {}
-  onReachBottom() {}
-  onShareAppMessage() {}
-  onPageScroll() {}
-  onResize() {}
-  onTabItemTap() {}
+/**
+ * @see https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/events.html
+ */
+export interface ComponentEventOptions {
+  bubbles?: boolean;
+  composed?: boolean;
+  capturePhase?: boolean;
 }
-
-/*
-import { BasePage, IQuery } from '../../wechat/index';
-
-class CheckoutPage extends BasePage {
-  data = {
-    paymentTitle: 'test!!',
-  };
-  onLoad(options: IQuery) {
-    console.log('checkout.onLoad()', options);
-    const { order_type, goods_id, goods_num, goods_sku_id } = options;
-    api.getOrder({ order_type, goods_id, goods_num, goods_sku_id })
-      .then((resp: any) => {
-        console.log('received result', resp);
-      });
-  }
-}
-Page(new CheckoutPage());
-*/
