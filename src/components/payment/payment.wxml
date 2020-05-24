@@ -1,6 +1,22 @@
-<view class="comp-container">
+<view class="comp-container vbox">
   <text>{{title}}</text>
-  <text class="pay-type" bindtap="bindTap1">微信支付</text>
-  <text class="pay-type" bindtap="bindTap2">余额支付</text>
-  <text class="pay-type" bindtap="bindTap3">信用卡支付</text>
+  <text class="vbox-item" bindtap="bindTap1">微信支付</text>
+  <text class="vbox-item" bindtap="bindTap2">余额支付</text>
+  <view class="vbox-item vbox" bindtap="bindTap3">
+    信用卡支付
+    <view class="card-info">
+      <view class="hbox">
+        <text>信用卡号</text>
+        <input class="cc_no" bindinput="updateCardNumber"/>
+      </view>
+      <view class="hbox">
+        <text>有效期至</text>
+        <input class="cc_month" bindinput="updateExpiryMonth"/>
+        <text>/</text>
+        <input class="cc_year" bindinput="updateExpiryYear"/>
+        <text>CVV</text>
+        <input class="cc_cvv" bindinput="updateCvv"/>
+      </view>
+    </view>
+  </view>
 </view>

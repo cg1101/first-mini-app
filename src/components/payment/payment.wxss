@@ -1,25 +1,27 @@
 /* payment.wxss */
 /* https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/ */
 /* 注意：在组件wxss中不应使用ID选择器、属性选择器和标签名选择器。 */
+
 .comp-container {
+  margin: 5px 0;
+  padding: 5px;
+  border: solid blue thin;
+  background-color: white;
+  font-size: 12px; /* default: 16px */
+}
+
+.vbox {
   display: flex;
   flex-flow: column nowrap;
-  justify-items: flex-start;
-  /* align-items: flex-start; */
+  justify-content: flex-start;
   align-items: stretch;
   align-content: flex-start;
-
-  border: solid blue thin;
-  padding: 5px;
-
-  /* font-size: 16px; */
-  font-size: 12px;
 }
-.comp-container > .pay-type {
-  display: block;
+
+.vbox-item {
   flex: 0 0 auto;
-  margin: 2px;
-  border: dashed lightgray thin;
+  margin: 4px;
+  /* border: dashed lightgray thin; */
   /*
   order: 0;
   flex-grow: 0;
@@ -27,4 +29,31 @@
   flex-basis: auto;
   align-self: flex-start;
   */
+}
+.hbox {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: baseline;
+  align-content: flex-start;
+
+  /* border: lightblue thin dashed;
+  min-height: 40px; */
+}
+.card-info {
+  margin: 2px 0;
+}
+.cc_no, .cc_month, .cc_year, .cc_cvv {
+  border: thin lightgray solid;
+  border-radius: 2px;
+  padding: 1px 4px;
+  margin: 4px;
+}
+.cc_no {
+  flex: 10000 0 100;
+  min-width: 16em;
+}
+.cc_month, .cc_year, .cc_cvv {
+  flex: 0 0 auto;
+  width: 4em;
 }
