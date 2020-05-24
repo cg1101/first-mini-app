@@ -12,7 +12,11 @@
 
 <view>
 <text>component</text>
-<my-comp-payment title="{{paymentTitle}}" bind:payTypeSelected="reportPayType"></my-comp-payment>
+  <my-comp-payment title="{{paymentTitle}}" bind:payTypeSelected="reportPayType">
+    请选择支付方式
+  </my-comp-payment>
 
-<my-comp-payment bind:payTypeSelected="report2"></my-comp-payment>
+  <my-comp-payment bind:payTypeSelected="report2">
+    Please select a payment type:
+  </my-comp-payment>
 </view>

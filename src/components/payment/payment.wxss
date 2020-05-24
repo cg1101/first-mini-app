@@ -18,9 +18,9 @@
   align-content: flex-start;
 }
 
-.vbox-item {
+.vbox > .vbox-item {
   flex: 0 0 auto;
-  margin: 4px;
+  margin: 4px 0;
   /* border: dashed lightgray thin; */
   /*
   order: 0;
@@ -33,7 +33,7 @@
 .hbox {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: baseline;
   align-content: flex-start;
 
@@ -43,6 +43,9 @@
 .card-info {
   margin: 2px 0;
 }
+.card-info .label {
+  flex: 0 0 auto;
+}
 .cc_no, .cc_month, .cc_year, .cc_cvv {
   border: thin lightgray solid;
   border-radius: 2px;
@@ -50,7 +53,7 @@
   margin: 4px;
 }
 .cc_no {
-  flex: 10000 0 100;
+  flex: 10000 1 auto;
   min-width: 16em;
 }
 .cc_month, .cc_year, .cc_cvv {

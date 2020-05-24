@@ -1,20 +1,21 @@
 <view class="comp-container vbox">
-  <text>{{title}}</text>
+  <view class="vbox-item"><slot></slot></view>
+  <!-- <text class="vbox-item">{{title}}</text> -->
   <text class="vbox-item" bindtap="bindTap1">微信支付</text>
   <text class="vbox-item" bindtap="bindTap2">余额支付</text>
   <view class="vbox-item vbox" bindtap="bindTap3">
     信用卡支付
     <view class="card-info">
       <view class="hbox">
-        <text>信用卡号</text>
+        <text class="label">信用卡号</text>
         <input class="cc_no" bindinput="updateCardNumber"/>
       </view>
       <view class="hbox">
-        <text>有效期至</text>
+        <text class="label">有效期至</text>
         <input class="cc_month" bindinput="updateExpiryMonth"/>
-        <text>/</text>
+        <text class="label">/</text>
         <input class="cc_year" bindinput="updateExpiryYear"/>
-        <text>CVV</text>
+        <text class="label">CVV</text>
         <input class="cc_cvv" bindinput="updateCvv"/>
       </view>
     </view>
