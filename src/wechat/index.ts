@@ -203,6 +203,27 @@ export interface ComponentObserverDefinition {
 }
 
 /**
+ * https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/lifetimes.html
+ */
+export interface ComponentLifecycleOptions {
+  created?: () => void;
+  attached?: () => void;
+  ready?: () => void;
+  moved?: () => void;
+  detached?: () => void;
+  error?: (errObj: object) => void;
+}
+
+/**
+ * https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/lifetimes.html
+ */
+export interface PageLifecycleOptions {
+  show?: () => void;
+  hide?: () => void;
+  resize?: (options: ResizeOptions) => void;
+}
+
+/**
  * @see https://developers.weixin.qq.com/miniprogram/dev/reference/api/Component.html
  */
 export interface WeChatMiniProgramComponent {
@@ -222,8 +243,8 @@ export interface WeChatMiniProgramComponent {
   relations: object;
   externalClasses: string[];
   option: Record<string, any>;
-  lifetimes: object;
-  pageLifetimes: object;
+  lifetimes: ComponentLifecycleOptions;
+  pageLifetimes: PageLifecycleOptions;
   definitionFilter: () => void;
 }
 
