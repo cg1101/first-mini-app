@@ -195,6 +195,35 @@ export interface WeChatMiniProgramPage {
   onTabItemTap: (options: TabItemTapOptions) => void;
 }
 
+/**
+ * @see https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/observer.html
+ */
+export interface ComponentObserverDefinition {
+  [selector: string]: () => void;
+}
+
+/**
+ * @see https://developers.weixin.qq.com/miniprogram/dev/reference/api/Component.html
+ */
+export interface WeChatMiniProgramComponent {
+  properties: object;
+  data: Record<string, any>;
+  observers: ComponentObserverDefinition;
+  methods: object;
+  behaviors: string[];
+  created: () => void;
+  attached: () => void;
+  ready: () => void;
+  moved: () => void;
+  detached: () => void;
+  relations: object;
+  externalClasses: string[];
+  option: Record<string, any>;
+  lifetimes: object;
+  pageLifetimes: object;
+  definitionFilter: () => void;
+}
+
 export class BasePage implements WeChatMiniProgramPage {
   data = {};
   onLoad(query: IQuery) {}
