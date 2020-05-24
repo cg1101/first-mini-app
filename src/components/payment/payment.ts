@@ -17,8 +17,8 @@ Component({
     $valid: true,
   },
   observers: {
-    // must use function expression, not arrow function because
-    // arrow function's lack of bindings for `this`
+    // here we must use function expression instead of arrow function
+    // because of arrow function's lack of bindings for `this`
     'cardNumber, expiryMonth, expiryYear, cvv': function (
       cardNumberEvent: any,
       expiryMonthEvent: any,
@@ -30,18 +30,24 @@ Component({
       const { value: expiryYear } = expiryYearEvent;
       const { value: cvv } = cvvEvent;
 
-      const cardType = CreditCard.getCardType(cardNumber);
-      const isCvvOkay = /^\d{3,}$/.test(cvv);
-      const $valid = CreditCard.luhnCheck(cardNumber) &&
-        CreditCard.checkCreditCard(cardNumber, cardType) &&
-        CreditCard.dateCheck(expiryMonth, expiryYear) &&
-        isCvvOkay;
+      const $valid = this.validateCreditCardInfo(cardNumber, expiryMonth, expiryYear, cvv);
       this.setData({ $valid });
     }
   },
   methods: {
-    validateCreditCardInfo() {
+    validateCreditCardInfo(
+      cardNumber: string,
+      expiryMonth: string,
+      expiryYear: string,
+      cvv: string,
+    ) {
       console.log('validate credit card info');
+      const cardType = CreditCard.getCardType(cardNumber);
+      const isCvvOkay = /^\d{3,}$/.test(cvv);
+      return CreditCard.luhnCheck(cardNumber) &&
+        CreditCard.checkCreditCard(cardNumber, cardType) &&
+        CreditCard.dateCheck(expiryMonth, expiryYear) &&
+        isCvvOkay;
     },
     usePayTypeWeChat(e: any) {
       console.log(`component payment tapped`, e);
