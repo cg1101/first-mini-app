@@ -1,4 +1,5 @@
 import { PayType } from '../../models/index';
+import * as CreditCard from '../../utils/credit-card';
 
 Component({
   properties: {
@@ -14,6 +15,29 @@ Component({
     expiryYear: '',
     cvv: '',
     $valid: true,
+  },
+  observers: {
+    // must use function expression, not arrow function because
+    // arrow function's lack of bindings for `this`
+    'cardNumber, expiryMonth, expiryYear, cvv': function (
+      cardNumberEvent: any,
+      expiryMonthEvent: any,
+      expiryYearEvent: any,
+      cvvEvent: any,
+    ) {
+      const { value: cardNumber } = cardNumberEvent;
+      const { value: expiryMonth } = expiryMonthEvent;
+      const { value: expiryYear } = expiryYearEvent;
+      const { value: cvv } = cvvEvent;
+
+      const cardType = CreditCard.getCardType(cardNumber);
+      const isCvvOkay = /^\d{3,}$/.test(cvv);
+      const $valid = CreditCard.luhnCheck(cardNumber) &&
+        CreditCard.checkCreditCard(cardNumber, cardType) &&
+        CreditCard.dateCheck(expiryMonth, expiryYear) &&
+        isCvvOkay;
+      this.setData({ $valid });
+    }
   },
   methods: {
     validateCreditCardInfo() {
@@ -35,7 +59,7 @@ Component({
       this.setData({ payType: PayType.CREDIT_CARD, $valid: true});
       console.log(`component payment tapped`, e);
     },
-    updateCardNo(e: any) {
+    updateCardNumber(e: any) {
       console.log('updateCardNumber()', e);
       const { detail: cardNumber } = e;
       this.setData({ cardNumber });

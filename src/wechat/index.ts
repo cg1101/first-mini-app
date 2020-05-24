@@ -235,16 +235,16 @@ export interface WeChatMiniProgramComponent {
   observers: ComponentObserverDefinition;
   methods: object;
   behaviors: string[];
-  created: () => void;
-  attached: () => void;
-  ready: () => void;
-  moved: () => void;
-  detached: () => void;
+  created?: () => void;
+  attached?: () => void;
+  ready?: () => void;
+  moved?: () => void;
+  detached?: () => void;
   relations: object;
   externalClasses: string[];
   option: Record<string, any>;
-  lifetimes: ComponentLifecycleOptions;
-  pageLifetimes: PageLifecycleOptions;
+  lifetimes?: ComponentLifecycleOptions;
+  pageLifetimes?: PageLifecycleOptions;
   definitionFilter: () => void;
 }
 

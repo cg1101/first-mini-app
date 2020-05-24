@@ -310,12 +310,20 @@ export function luhnCheck(cardNum: string): boolean {
  * @param expiryMonth 
  * @param expIryYear 
  */
-export function dateCheck(expiryMonth: string, expIryYear: string): boolean {
+export function dateCheck(expiryMonth: string, expiryYear: string): boolean {
   const today = new Date();
   const someday = new Date();
-  expiryMonth = expiryMonth.padStart(2, '0');
-  expIryYear = expIryYear.padStart(2, '0');
-  expIryYear = '20' + expIryYear;
-  someday.setFullYear(parseInt(expIryYear), parseInt(expiryMonth), 1);
+  // expiryMonth = expiryMonth.padStart(2, '0');
+  // expiryYear = expiryYear.padStart(2, '0');
+  expiryMonth = zfill(parseInt(expiryMonth));
+  expiryYear = zfill(parseInt(expiryYear));
+  expiryYear = '20' + expiryYear;
+  someday.setFullYear(parseInt(expiryYear), parseInt(expiryMonth), 1);
   return someday >= today;
+}
+
+function zfill(value: number, size = 2, char = '0'): string {
+  let number = value.toString();
+  while (number.length < size) number = char + number;
+  return number;
 }
