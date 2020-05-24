@@ -203,6 +203,13 @@ export interface ComponentObserverDefinition {
 }
 
 /**
+ * @see https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/component.html
+ */
+export interface ComponentMethods {
+  [methodName: string]: (...args: any[]) => void;
+}
+
+/**
  * https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/lifetimes.html
  */
 export interface ComponentLifecycleOptions {
@@ -215,12 +222,19 @@ export interface ComponentLifecycleOptions {
 }
 
 /**
- * https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/lifetimes.html
+ * @see https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/lifetimes.html
  */
 export interface PageLifecycleOptions {
   show?: () => void;
   hide?: () => void;
   resize?: (options: ResizeOptions) => void;
+}
+
+/**
+ * @see https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/pure-data.html
+ */
+export interface ComponentOptions {
+  pureDataPattern: RegExp;
 }
 
 /**
@@ -231,18 +245,18 @@ export interface WeChatMiniProgramComponent {
    * 
    */
   properties: object;
-  data: Record<string, any>;
+  data?: Record<string, any>;
   observers: ComponentObserverDefinition;
-  methods: object;
+  methods?: ComponentMethods;
   behaviors: string[];
   created?: () => void;
   attached?: () => void;
   ready?: () => void;
   moved?: () => void;
   detached?: () => void;
-  relations: object;
-  externalClasses: string[];
-  option: Record<string, any>;
+  relations?: object;
+  externalClasses?: string[];
+  options?: ComponentOptions;
   lifetimes?: ComponentLifecycleOptions;
   pageLifetimes?: PageLifecycleOptions;
   definitionFilter: () => void;
