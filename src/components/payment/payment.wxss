@@ -9,6 +9,11 @@
   background-color: white;
   font-size: 12px; /* default: 16px */
 }
+/*
+.comp-container.payment-valid {
+  background-color: lightgreen;
+}
+*/
 
 .vbox {
   display: flex;

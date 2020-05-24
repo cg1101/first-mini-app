@@ -9,12 +9,12 @@ Component({
     },
   },
   data: {
-    payType: PayType.WECHAT,
+    payType: 0,
     cardNumber: '',
     expiryMonth: '',
     expiryYear: '',
     cvv: '',
-    $valid: true,
+    $valid: false,
   },
   observers: {
     // here we must use function expression instead of arrow function
@@ -30,18 +30,21 @@ Component({
       const { value: expiryYear } = expiryYearEvent;
       const { value: cvv } = cvvEvent;
 
-      const $valid = this.validateCreditCardInfo(cardNumber, expiryMonth, expiryYear, cvv);
+      const $valid = this.validateCreditCardInfo({
+        cardNumber, expiryMonth, expiryYear, cvv
+      });
       this.setData({ $valid });
     }
   },
   methods: {
-    validateCreditCardInfo(
+    validateCreditCardInfo(cardInfo: {
       cardNumber: string,
       expiryMonth: string,
       expiryYear: string,
       cvv: string,
-    ) {
+    }) {
       console.log('validate credit card info');
+      const { cardNumber, expiryMonth, expiryYear, cvv } = cardInfo;
       const cardType = CreditCard.getCardType(cardNumber);
       const isCvvOkay = /^\d{3,}$/.test(cvv);
       return CreditCard.luhnCheck(cardNumber) &&
@@ -62,8 +65,9 @@ Component({
       this.triggerEvent('payTypeSelected', details, {});
     },
     usePayTypeCreditCard(e: any) {
-      this.setData({ payType: PayType.CREDIT_CARD, $valid: true});
       console.log(`component payment tapped`, e);
+      const $valid = this.validateCreditCardInfo(this.data);
+      this.setData({ payType: PayType.CREDIT_CARD, $valid });
     },
     updateCardNumber(e: any) {
       console.log('updateCardNumber()', e);
