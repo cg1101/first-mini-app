@@ -3,21 +3,21 @@
   <!-- <text class="vbox-item">{{title}}</text> -->
   <text class="vbox-item" bindtap="usePayTypeWeChat">微信支付</text>
   <text class="vbox-item" bindtap="usePayTypeBalance">余额支付</text>
-  <view class="vbox-item vbox" bindtap="usePayTypeBalance">
+  <view class="vbox-item vbox" bindtap="usePayTypeCreditCard">
     信用卡支付
-    <view class="card-info">
+    <view hidden="{{!showCardInfo}}" class="card-info">
       <view class="hbox">
         <text class="label">信用卡号</text>
-        <input class="cc_no flexi" bindinput="updateCardNumber"/>
+        <input class="cc_no flexi" value="{{cardNumber}}" bindinput="updateCardNumber"/>
       </view>
       <view class="hbox">
         <text class="label">有效期至</text>
-        <input class="cc_month" bindinput="updateExpiryMonth"/>
+        <input class="cc_month" value="{{expiryMonth}}" bindinput="updateExpiryMonth"/>
         <text class="label">/</text>
-        <input class="cc_year" bindinput="updateExpiryYear"/>
+        <input class="cc_year" value="{{expiryYear}}" bindinput="updateExpiryYear"/>
         <text class="flexi"></text>
         <text class="label">CVV</text>
-        <input class="cc_cvv" bindinput="updateCvv"/>
+        <input class="cc_cvv" value="{{cvv}}" bindinput="updateCvv"/>
       </view>
     </view>
   </view>
