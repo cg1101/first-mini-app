@@ -11,7 +11,8 @@
     "pages/video/video",
     "pages/scanner/scanner",
     "pages/logs/logs",
-    "pages/settings/settings"
+    "pages/settings/settings",
+    "components/orders/orders"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -31,6 +32,10 @@
       {
         "pagePath": "pages/features/features",
         "text": "功能展示"
+      },
+      {
+        "pagePath": "components/orders/orders",
+        "text": "订单列表"
       },
       {
         "pagePath": "pages/settings/settings",
