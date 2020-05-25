@@ -16,6 +16,8 @@
     请选择支付方式
   </my-comp-payment>
 
+  <hr/>
+
   <my-comp-payment bind:payTypeSelected="report2">
     Please select a payment type:
   </my-comp-payment>
