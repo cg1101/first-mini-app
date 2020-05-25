@@ -62,7 +62,9 @@
       <button open-type="share">Share</button>
       <button open-type="getPhoneNumber"
               bindgetphonenumber="">getPhoneNumber</button>
-      <button open-type="getUserInfo" bindgetuserinfo="getUserInfoCallback">getUserInfo</button>
+      <button type="primary"
+              open-type="getUserInfo"
+              bindgetuserinfo="getUserInfoCallback">getUserInfo</button>
       <button open-type="launchApp"
               app-parameter=""
               binderrror="">launchApp</button>
