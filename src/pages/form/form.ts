@@ -54,6 +54,7 @@ Page({
       backgroundColor: 'yellow', //'#EBEBEB',
     },
   },
+  // lifecycle functions
   onLoad() {
 
   },
@@ -72,6 +73,10 @@ Page({
       const timer = { ...this.data.timer, running: false, label: 'Start Timer' };
       this.setData({ timer});
     }
+  },
+  // event binding functions
+  getUserInfoCallback(e: any) {
+    console.log('trying to getUserInfo', e);
   },
   reportProgress() {
     const progressDemo = { ...this.data.progressDemo };

@@ -21,7 +21,7 @@ const pathMap: Record<string, string> = {
 export class ShopApi {
   readonly wxapp_id = '10001';
 
-  readonly token = '44a54b203e356dcbaa98d49c8e1cef70';
+  readonly token = 'e7e6d20952f389d96ed28b68172b670d';
 
   constructor(protected url: string = 'http://shop.pcfocus.com.au/index.php') { }
 
