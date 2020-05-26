@@ -5,6 +5,7 @@
     "pages/features/features",
     "pages/audio/audio",
     "pages/form/form",
+    "pages/address/address",
     "pages/location/location",
     "pages/map/map",
     "pages/camera/camera",

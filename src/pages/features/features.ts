@@ -11,6 +11,7 @@ Page({
       { name: 'audio', label: 'Audio' },
       { name: 'scanner', label: 'Scanner' },
       { name: 'location', label: 'Get Location' },
+      { name: 'address', label: 'Get Address' },
     ],
   },
   showFeature(e: any) {
