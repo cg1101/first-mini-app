@@ -1,0 +1,7 @@
+<view>
+<button type="primary" bindtap="getLocation">Get Location</button>
+
+<text>{{location}}</text>
+
+<button type="warn" bindtap="openSettings">Grant</button>
+</view>

@@ -10,6 +10,7 @@ Page({
       { name: 'video', label: 'Video' },
       { name: 'audio', label: 'Audio' },
       { name: 'scanner', label: 'Scanner' },
+      { name: 'location', label: 'Get Location' },
     ],
   },
   showFeature(e: any) {
