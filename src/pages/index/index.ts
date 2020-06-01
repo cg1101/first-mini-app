@@ -93,9 +93,8 @@ Page({
   },
   bindMultiPickerChange(e: any) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
-    this.setData({
-      multiIndex: e.detail.value
-    })
+    const { value: multiIndex } = e.detail;
+    this.setData({ multiIndex });
   },
   bindMultiPickerColumnChange(e: any) {
     console.log('修改的列为', e.detail.column, '，值为', e.detail.value);
@@ -105,7 +104,9 @@ Page({
     const state = states[multiIndex[0]];
     const letter = letters[multiIndex[1]];
     if (column < 2) {
-      multiArray[2] = getSuburbs(state, letter);
+      const suburbList = getSuburbs(state, letter);
+      multiArray[2] = suburbList;
+      multiIndex[2] = parseInt('' + suburbList.length / 2);
     }
     this.setData({ multiArray, multiIndex });
   },
