@@ -996,7 +996,7 @@
 
   - [登录](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/login/wx.login.html)
     * [wx.login](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/login/wx.login.html)
-    * [wx.checkSession](https://developers.weixin.qq.com/miniprogram/dev/open-api/file/wx.checkSession.html)
+    * [wx.checkSession](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/login/wx.checkSession.html)
   - [小程序跳转](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/miniprogram-navigate/wx.navigateToMiniProgram.html)
     * [wx.navigateToMiniProgram](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/miniprogram-navigate/wx.navigateToMiniProgram.html)
     * [wx.navigateBackMiniProgram](https://developers.weixin.qq.com/miniprogram/dev/api/open-api/miniprogram-navigate/wx.navigateBackMiniProgram.html)
